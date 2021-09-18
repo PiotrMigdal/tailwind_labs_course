@@ -9,10 +9,10 @@
         @apply inline-block px-4 py-2 uppercase tracking-wider font-semibold focus:outline-none text-sm rounded-lg sm:text-base focus:ring focus:ring-offset-2 focus:ring-opacity-50
     }
     .btn-primary {
-        @apply bg-purple-600 text-white hover:bg-purple-800 focus:ring-purple-500 active:bg-purple-400
+        @apply bg-brand text-white hover:bg-brand-dark focus:ring-brand active:bg-brand-light
     }
     .btn-secondary {
-        @apply bg-purple-300 text-gray-800 hover:bg-purple-400 focus:ring-purple-500 active:bg-purple-400
+        @apply bg-gray-300 text-gray-800 hover:bg-gray-400 focus:ring-gray-500 active:bg-gray-400
     }
     .btn-animation {
         @apply shadow-lg transform hover:-translate-y-0.5 transition transform hover:-translate-y-0.5 transition

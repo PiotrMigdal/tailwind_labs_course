@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/tailwind.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
     <title>Tailwind Course</title>
 </head>
 <body class="bg-gray-300">
     <!--For smallest devices width is medium, for 'sm' width is 'xl'.
         For 2xl we have 5 columns because image will be wider than the text. See spans below
      -->
-    <div class="bg-gray-100 grid lg:grid-cols-2 2xl:grid-cols-5">
+    <section class="bg-gray-100 grid lg:grid-cols-2 2xl:grid-cols-5">
         <div class="p-8 py-12 max-w-md mx-auto sm:max-w-xl lg:px-12 lg:py-24 lg:max-w-full xl:mr-0 2xl:col-span-2">
             <!-- Special wrap for 'xl' and above so the width is bigger. -->
             <div class="xl:max-w-xl">
@@ -21,24 +22,26 @@
                 <img class="mt-6 shadow-xl sm:mt-8 sm:h-64 sm:w-full sm:object-cover object-center lg:hidden"
                 src="image/furniture.JPG" alt="All furniture">
                 <!-- text changes dependly on screen -->
-                <h1 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl">
+                <h1 class="mt-6 text-2xl font-headline font-bold text-gray-900 sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl">
                     <!-- <br> will work below small and on large. Don't 'sm' -->
                     You can buy online
                     <br class="sm:hidden lg:inline">
-                    <span class="text-purple-600">Take adventage of it.</span>
+                    <span class="text-brand">Take adventage of it.</span>
                 </h1>
                 <p class="mt-2 text-gray-600 sm:mt-4 sm:text-xl">A lot of text here</p>
-                <div class="mt-4 sm:mt-6">
-                    <a class="btn btn-primary btn-animation"
-                    href="#">
-                        Buy now!
-                    </a>
-                </div>
-                <div class="mt-4 sm:mt-6">
-                    <a class="btn btn-secondary"
-                    href="#">
-                        Learn more
-                    </a>
+                <div class="flex gap-4">
+                    <div class="mt-4 sm:mt-6">
+                        <a class="btn btn-primary btn-animation"
+                        href="#">
+                            Buy now!
+                        </a>
+                    </div>
+                    <div class="mt-4 sm:mt-6">
+                        <a class="btn btn-secondary"
+                        href="#">
+                            Learn more
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -47,6 +50,32 @@
             <!-- 'inset-0' = top0, bottom0, l0, r0 -->
             <img class="absolute inset-0 w-full h-full object-cover object-center" src="image/furniture.JPG">
         </div>
-    </div>
+    </section>
+    <section class="max-w-md sm:max-w-xl lg:max-w-6xl mx-auto px-8 lg:px-12 py-8">
+        <h1 class="text-xl text-gray-900">Popular collections</h1>
+        <p class="mt-2 text-gray-600">Surprise your friends with new fabulous home design!</p>
+        <div class="mt-6 grid gap-6 lg:grid-cols-2 xl:grid-cols-3" id="collections">
+        </div>
+        <script type="text/javascript">
+            let collections = '';
+            for (let i=1; i < 7; i++) {
+                collections += `
+                        <div class="flex items-center rounded-lg bg-white shadow-lg overflow-hidden">
+                            <img class="h-32 w-32 flex-shrink-0" src="image/${i}.jpg" alt="NAME">
+                            <div class="px-6 py-4">
+                                <div class="text-lg font-semibold text-gray-800">NAME</div>
+                                <p class="text-gray-600">PRICE</p>
+                                <div class="mt-4">
+                                    <a href="#" class="text-brand hover:text-brand-light font-semibold text-sm">
+                                        Explore ITEMS elements
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                `
+            }
+            document.getElementById('collections').innerHTML = collections;
+        </script>
+    </section>
 </body>
 </html>
