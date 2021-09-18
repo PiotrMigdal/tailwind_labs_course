@@ -1,0 +1,14 @@
+/* Order of layers matters */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* All components must be created at components layer */
+@layer components {
+    .btn-primary {
+        @apply inline-block px-4 py-2 uppercase tracking-wider font-semibold text-sm rounded-lg shadow-lg bg-purple-600 text-white sm:text-base hover:bg-purple-800 transform hover:-translate-y-0.5 transition focus:outline-none focus:ring focus:ring-offset-2 focus:ring-purple-500 focus:ring-opacity-50 active:bg-purple-400
+    }
+    .btn-secondary {
+        @apply inline-block px-4 py-2 uppercase tracking-wider font-semibold text-sm rounded-lg shadow-lg bg-purple-300 text-gray-800 sm:text-base hover:bg-purple-400 transform hover:-translate-y-0.5 transition focus:outline-none focus:ring focus:ring-offset-2 focus:ring-purple-500 focus:ring-opacity-50 active:bg-purple-400
+    }
+}
